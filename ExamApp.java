@@ -17,9 +17,7 @@ public class ExamApp {
         this.scanner = new Scanner(System.in);
     }
 
-    // ════════════════════════════════════════════
-    //  START
-    // ════════════════════════════════════════════
+    
     public void start() {
         printBanner();
 
@@ -35,9 +33,7 @@ public class ExamApp {
         scanner.close();
     }
 
-    // ════════════════════════════════════════════
-    //  LOGIN
-    // ════════════════════════════════════════════
+    
     private boolean login() {
         System.out.println("\n  ┌─────────────────────────────┐");
         System.out.println("  │           LOGIN             │");
@@ -72,9 +68,7 @@ public class ExamApp {
         return false;
     }
 
-    // ════════════════════════════════════════════
-    //  DASHBOARD
-    // ════════════════════════════════════════════
+    
     private void showDashboard() {
         while (true) {
             System.out.println();
@@ -102,9 +96,7 @@ public class ExamApp {
         }
     }
 
-    // ════════════════════════════════════════════
-    //  UPDATE PROFILE
-    // ════════════════════════════════════════════
+    
     private void updateProfile() {
         System.out.println("\n  ── Update Profile ──────────────────");
         System.out.println("  Current Name  : " + currentUser.getFullName());
@@ -123,9 +115,7 @@ public class ExamApp {
         System.out.println("  Updated Email : " + currentUser.getEmail());
     }
 
-    // ════════════════════════════════════════════
-    //  CHANGE PASSWORD
-    // ════════════════════════════════════════════
+    
     private void changePassword() {
         System.out.println("\n  ── Change Password ─────────────────");
         System.out.print("  Current Password: ");
@@ -154,9 +144,7 @@ public class ExamApp {
         System.out.println("  ✓ Password changed successfully.");
     }
 
-    // ════════════════════════════════════════════
-    //  START EXAM
-    // ════════════════════════════════════════════
+    
     private void startExam() {
         System.out.println("\n  ── Exam Instructions ───────────────────────────────");
         System.out.println("  • Total Questions : 10 MCQs");
@@ -171,9 +159,7 @@ public class ExamApp {
         runExam();
     }
 
-    // ════════════════════════════════════════════
-    //  RUN EXAM (navigate questions)
-    // ════════════════════════════════════════════
+    
     private void runExam() {
         int current = 0;
         int total = session.getTotalQuestions();
@@ -226,9 +212,7 @@ public class ExamApp {
         showResult();
     }
 
-    // ════════════════════════════════════════════
-    //  PRINT QUESTION
-    // ════════════════════════════════════════════
+    
     private void printQuestion(int index, Question q) {
         int saved = session.getAnswer(index);
         System.out.println();
@@ -257,9 +241,7 @@ public class ExamApp {
         System.out.println("  ─────────────────────────────────────────────────────");
     }
 
-    // ════════════════════════════════════════════
-    //  CONFIRM SUBMIT
-    // ════════════════════════════════════════════
+    
     private boolean confirmSubmit() {
         int attempted = session.getAttempted();
         int total = session.getTotalQuestions();
@@ -273,9 +255,7 @@ public class ExamApp {
         return scanner.nextLine().trim().equalsIgnoreCase("yes");
     }
 
-    // ════════════════════════════════════════════
-    //  SHOW RESULT
-    // ════════════════════════════════════════════
+    
     private void showResult() {
         int score    = session.calculateScore();
         int total    = session.getTotalQuestions();
@@ -321,9 +301,7 @@ public class ExamApp {
         session = null;
     }
 
-    // ════════════════════════════════════════════
-    //  LOGOUT
-    // ════════════════════════════════════════════
+    
     private void logout() {
         System.out.println("\n  ✓ Session closed. " + currentUser.getFullName() + " logged out.");
         currentUser.logout();
@@ -331,9 +309,7 @@ public class ExamApp {
         session = null;
     }
 
-    // ════════════════════════════════════════════
-    //  HELPERS
-    // ════════════════════════════════════════════
+    
     private void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -350,9 +326,9 @@ public class ExamApp {
         System.out.println("  ║           Core Java Project               ║");
         System.out.println("  ╠═══════════════════════════════════════════╣");
         System.out.println("  ║  Demo Accounts:                           ║");
-        System.out.println("  ║  Username: student1  Password: pass123    ║");
-        System.out.println("  ║  Username: student2  Password: pass456    ║");
-        System.out.println("  ║  Username: student3  Password: pass789    ║");
+        System.out.println("  ║  Username: student1  Password: Ved@123    ║");
+        System.out.println("  ║  Username: student2  Password: Om@123     ║");
+        System.out.println("  ║  Username: student3  Password: Gargi@123  ║");
         System.out.println("  ╚═══════════════════════════════════════════╝");
     }
 }
