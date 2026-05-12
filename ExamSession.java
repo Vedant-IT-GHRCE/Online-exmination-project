@@ -18,7 +18,7 @@ public class ExamSession {
         this.startTimeMillis = System.currentTimeMillis();
     }
 
-    // ── Timer ────────────────────────────────────────────────
+    
     public int getElapsedSeconds() {
         return (int) ((System.currentTimeMillis() - startTimeMillis) / 1000);
     }
@@ -38,7 +38,7 @@ public class ExamSession {
         return String.format("%02d:%02d", mins, secs);
     }
 
-    // ── Answer Selection ─────────────────────────────────────
+    
     public boolean selectAnswer(int questionIndex, int option) {
         if (questionIndex < 0 || questionIndex >= totalQuestions) return false;
         if (option < 1 || option > 4) return false;
@@ -50,14 +50,14 @@ public class ExamSession {
         return answers[questionIndex];
     }
 
-    // ── Submit ───────────────────────────────────────────────
+    
     public void submit() {
         this.submitted = true;
     }
 
     public boolean isSubmitted() { return submitted; }
 
-    // ── Results ──────────────────────────────────────────────
+    
     public int calculateScore() {
         int score = 0;
         for (int i = 0; i < totalQuestions; i++) {
